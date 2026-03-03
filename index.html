@@ -15,8 +15,9 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-background:#0c0c14;
-color:#eaeaea;
+background:#0b0b0f;
+color:#e6e6e6;
+line-height:1.6;
 }
 
 header{
@@ -24,24 +25,20 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:#111122;
+background:#111118;
 border-bottom:1px solid #1f1f2e;
 }
 
 header h1{
 font-size:22px;
 font-weight:700;
-background:linear-gradient(45deg,#8e2de2,#00c9a7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 nav a{
-margin-left:25px;
+margin-left:20px;
 text-decoration:none;
 color:#aaa;
 font-size:14px;
-transition:0.3s;
 }
 
 nav a:hover{
@@ -51,37 +48,33 @@ color:#fff;
 .hero{
 padding:120px 8%;
 text-align:center;
-background:linear-gradient(135deg,#141426,#1c1c35);
+background:linear-gradient(135deg,#111118,#1a1a2a);
 }
 
 .hero h2{
-font-size:48px;
+font-size:45px;
 margin-bottom:20px;
 }
 
 .hero span{
-background:linear-gradient(45deg,#8e2de2,#00c9a7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:#8e2de2;
 }
 
 .hero p{
 color:#bbb;
-margin-bottom:40px;
 max-width:700px;
-margin-left:auto;
-margin-right:auto;
+margin:auto;
+margin-bottom:30px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 35px;
-background:linear-gradient(45deg,#8e2de2,#00c9a7);
+padding:14px 30px;
+background:#8e2de2;
 color:#fff;
-border-radius:6px;
 text-decoration:none;
+border-radius:6px;
 font-weight:600;
-transition:0.3s;
 }
 
 .btn:hover{
@@ -94,77 +87,89 @@ padding:100px 8%;
 
 .section h3{
 text-align:center;
-font-size:34px;
-margin-bottom:60px;
+font-size:32px;
+margin-bottom:50px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-background:#161628;
-padding:40px;
-border-radius:12px;
-border:1px solid #222244;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#8e2de2;
+background:#151520;
+padding:30px;
+border-radius:10px;
+border:1px solid #222;
 }
 
 .card h4{
 margin-bottom:15px;
-font-size:20px;
+color:#8e2de2;
 }
 
 .card p{
 color:#aaa;
 font-size:14px;
-line-height:1.6;
 }
 
 .stats{
 display:flex;
-justify-content:space-around;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
 text-align:center;
 margin-top:60px;
-flex-wrap:wrap;
-}
-
-.stats div{
-margin:20px;
 }
 
 .stats h4{
 font-size:40px;
-background:linear-gradient(45deg,#8e2de2,#00c9a7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:#8e2de2;
 }
 
 .about{
-text-align:center;
 max-width:800px;
 margin:auto;
+text-align:center;
 color:#bbb;
-line-height:1.8;
 }
 
 .contact{
 text-align:center;
 }
 
+input,textarea{
+width:80%;
+max-width:500px;
+padding:12px;
+margin:10px 0;
+border-radius:5px;
+border:none;
+background:#1a1a1a;
+color:white;
+}
+
 footer{
-padding:40px 8%;
+padding:40px;
 text-align:center;
-background:#111122;
-color:#777;
+background:#111118;
 border-top:1px solid #1f1f2e;
+color:#777;
+}
+
+.social a{
+display:inline-block;
+margin:10px;
+padding:10px 15px;
+background:#1877f2;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.social a:hover{
+opacity:0.8;
 }
 
 </style>
@@ -181,9 +186,9 @@ border-top:1px solid #1f1f2e;
 </header>
 
 <section class="hero">
-<h2>Level Up Your <span>Business Growth</span></h2>
-<p>We help service-based businesses generate qualified leads, automate operations, and build powerful digital presence worldwide.</p>
-<a href="#contact" class="btn">Get Started</a>
+<h2>Headquarters of the <span>Next Generation</span> Technology Solutions</h2>
+<p>We help service businesses generate qualified leads, build modern websites, automate systems, and grow with high-quality digital solutions.</p>
+<a href="#contact" class="btn">Book a Free Consultation</a>
 </section>
 
 <section class="section" id="services">
@@ -192,22 +197,22 @@ border-top:1px solid #1f1f2e;
 
 <div class="card">
 <h4>Lead Generation</h4>
-<p>Cold calling and outreach campaigns that bring real, high-intent clients for your business.</p>
+<p>Targeted outreach and cold calling campaigns to bring high-quality clients to your business.</p>
 </div>
 
 <div class="card">
 <h4>Email Marketing</h4>
-<p>Performance-driven email funnels designed to increase response and close more deals.</p>
+<p>Conversion-focused email campaigns to increase engagement and sales.</p>
 </div>
 
 <div class="card">
-<h4>Website Design</h4>
-<p>Modern, fast, and conversion-focused websites built to represent your brand globally.</p>
+<h4>Website Development</h4>
+<p>Modern, fast, and responsive websites built for performance and growth.</p>
 </div>
 
 <div class="card">
-<h4>Business Systems</h4>
-<p>Automation and smart workflows to simplify your operations and boost productivity.</p>
+<h4>Business Automation</h4>
+<p>Smart workflow systems to improve efficiency and reduce manual work.</p>
 </div>
 
 </div>
@@ -219,35 +224,50 @@ border-top:1px solid #1f1f2e;
 </div>
 <div>
 <h4>30+</h4>
-<p>Happy Clients</p>
+<p>Clients Served</p>
 </div>
 <div>
 <h4>5+</h4>
-<p>Countries Served</p>
+<p>Countries</p>
 </div>
 </div>
 
 </section>
 
 <section class="section" id="about">
-<h3>About NextGen HQ Tech</h3>
+<h3>About Us</h3>
 <p class="about">
-NextGen HQ Tech operates as the headquarter of next generation business solutions. 
-We combine strategic outreach, technology, and execution to help businesses scale faster and compete globally.
+NextGen HQ Tech operates as the headquarters for next-generation business solutions. 
+We combine strategy, technology, and execution to help businesses scale faster and compete globally.
 </p>
 </section>
 
 <section class="section contact" id="contact">
-<h3>Let's Work Together</h3>
-<p>Email: your@email.com</p>
-<p>WhatsApp: +880XXXXXXXXXX</p>
+<h3>Contact Us</h3>
+
+<form action="https://formspree.io/f/yourformid" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
 <br>
-<a href="mailto:your@email.com" class="btn">Contact Now</a>
+<input type="email" name="email" placeholder="Your Email" required>
+<br>
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+<br>
+<button class="btn" type="submit">Send Message</button>
+</form>
+
+<br><br>
+
+<div class="social">
+<a href="https://facebook.com/nextgenhqtech" target="_blank">
+Facebook Page
+</a>
+</div>
+
 </section>
 
 <footer>
-© 2026 NextGen HQ Tech. All Rights Reserved.
+© 2026 NextGen HQ Tech | All Rights Reserved
 </footer>
 
 </body>
-</html>
+  </html>
