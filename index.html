@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextGen HQ Tech</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -15,23 +17,27 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-background:#0b0b0f;
-color:#e6e6e6;
-line-height:1.6;
+background:#0a0a0f;
+color:#f1f1f1;
 }
 
 header{
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
 background:#111118;
-border-bottom:1px solid #1f1f2e;
+border-bottom:1px solid #1c1c25;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 header h1{
-font-size:22px;
-font-weight:700;
+font-size:20px;
+background:linear-gradient(90deg,#7b2ff7,#00c9ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 nav a{
@@ -39,6 +45,7 @@ margin-left:20px;
 text-decoration:none;
 color:#aaa;
 font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -46,39 +53,43 @@ color:#fff;
 }
 
 .hero{
-padding:120px 8%;
+padding:140px 8%;
 text-align:center;
-background:linear-gradient(135deg,#111118,#1a1a2a);
+background:radial-gradient(circle at center,#14141f,#0a0a0f);
 }
 
 .hero h2{
-font-size:45px;
+font-size:50px;
 margin-bottom:20px;
 }
 
 .hero span{
-color:#8e2de2;
+background:linear-gradient(90deg,#7b2ff7,#00c9ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-color:#bbb;
 max-width:700px;
 margin:auto;
-margin-bottom:30px;
+color:#bbb;
+margin-bottom:40px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 30px;
-background:#8e2de2;
-color:#fff;
+padding:15px 35px;
+background:linear-gradient(90deg,#7b2ff7,#00c9ff);
+color:white;
+border-radius:50px;
 text-decoration:none;
-border-radius:6px;
 font-weight:600;
+transition:0.3s;
 }
 
 .btn:hover{
-opacity:0.8;
+transform:scale(1.05);
+opacity:0.9;
 }
 
 .section{
@@ -87,26 +98,32 @@ padding:100px 8%;
 
 .section h3{
 text-align:center;
-font-size:32px;
-margin-bottom:50px;
+font-size:34px;
+margin-bottom:60px;
 }
 
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
 }
 
 .card{
-background:#151520;
-padding:30px;
-border-radius:10px;
-border:1px solid #222;
+background:#14141f;
+padding:35px;
+border-radius:15px;
+border:1px solid #1f1f2e;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#7b2ff7;
 }
 
 .card h4{
 margin-bottom:15px;
-color:#8e2de2;
+color:#00c9ff;
 }
 
 .card p{
@@ -117,22 +134,15 @@ font-size:14px;
 .stats{
 display:flex;
 justify-content:center;
-gap:80px;
+gap:60px;
 flex-wrap:wrap;
 text-align:center;
 margin-top:60px;
 }
 
 .stats h4{
-font-size:40px;
-color:#8e2de2;
-}
-
-.about{
-max-width:800px;
-margin:auto;
-text-align:center;
-color:#bbb;
+font-size:36px;
+color:#7b2ff7;
 }
 
 .contact{
@@ -144,9 +154,9 @@ width:80%;
 max-width:500px;
 padding:12px;
 margin:10px 0;
-border-radius:5px;
+border-radius:8px;
 border:none;
-background:#1a1a1a;
+background:#111;
 color:white;
 }
 
@@ -154,22 +164,18 @@ footer{
 padding:40px;
 text-align:center;
 background:#111118;
-border-top:1px solid #1f1f2e;
-color:#777;
+border-top:1px solid #1c1c25;
+color:#666;
 }
 
 .social a{
 display:inline-block;
 margin:10px;
-padding:10px 15px;
+padding:10px 18px;
 background:#1877f2;
 color:white;
 text-decoration:none;
-border-radius:5px;
-}
-
-.social a:hover{
-opacity:0.8;
+border-radius:6px;
 }
 
 </style>
@@ -186,33 +192,37 @@ opacity:0.8;
 </header>
 
 <section class="hero">
-<h2>Headquarters of the <span>Next Generation</span> Technology Solutions</h2>
-<p>We help service businesses generate qualified leads, build modern websites, automate systems, and grow with high-quality digital solutions.</p>
+<h2>Powering the <span>Next Generation</span> of Business Growth</h2>
+<p>
+We deliver high-quality technology solutions including lead generation,
+digital systems, automation, and modern web development for growing businesses.
+</p>
 <a href="#contact" class="btn">Book a Free Consultation</a>
 </section>
 
 <section class="section" id="services">
 <h3>Our Core Services</h3>
+
 <div class="services">
 
 <div class="card">
 <h4>Lead Generation</h4>
-<p>Targeted outreach and cold calling campaigns to bring high-quality clients to your business.</p>
+<p>Strategic outreach campaigns to bring qualified clients to your business.</p>
 </div>
 
 <div class="card">
 <h4>Email Marketing</h4>
-<p>Conversion-focused email campaigns to increase engagement and sales.</p>
+<p>High conversion email systems to increase engagement and revenue.</p>
 </div>
 
 <div class="card">
 <h4>Website Development</h4>
-<p>Modern, fast, and responsive websites built for performance and growth.</p>
+<p>Modern, fast, and conversion-focused websites built for performance.</p>
 </div>
 
 <div class="card">
 <h4>Business Automation</h4>
-<p>Smart workflow systems to improve efficiency and reduce manual work.</p>
+<p>Smart workflow systems to improve efficiency and reduce manual tasks.</p>
 </div>
 
 </div>
@@ -222,23 +232,26 @@ opacity:0.8;
 <h4>150+</h4>
 <p>Leads Generated</p>
 </div>
+
 <div>
 <h4>30+</h4>
 <p>Clients Served</p>
 </div>
+
 <div>
 <h4>5+</h4>
 <p>Countries</p>
 </div>
+
 </div>
 
 </section>
 
 <section class="section" id="about">
 <h3>About Us</h3>
-<p class="about">
-NextGen HQ Tech operates as the headquarters for next-generation business solutions. 
-We combine strategy, technology, and execution to help businesses scale faster and compete globally.
+<p style="max-width:800px;margin:auto;text-align:center;color:#aaa;">
+NextGen HQ Tech operates as a modern technology headquarters focused on scalable business growth,
+strategic digital execution, and long-term partnerships.
 </p>
 </section>
 
@@ -246,12 +259,9 @@ We combine strategy, technology, and execution to help businesses scale faster a
 <h3>Contact Us</h3>
 
 <form action="https://formspree.io/f/yourformid" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<br>
-<input type="email" name="email" placeholder="Your Email" required>
-<br>
-<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-<br>
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
 <button class="btn" type="submit">Send Message</button>
 </form>
 
@@ -270,4 +280,4 @@ Facebook Page
 </footer>
 
 </body>
-  </html>
+</html>
