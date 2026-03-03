@@ -4,29 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextGen HQ Tech</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0f0f0f;color:#e5e5e5;line-height:1.6;}
-header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:#111;border-bottom:1px solid #222;}
-header h1{color:#fff;font-size:22px;}
-nav a{color:#aaa;text-decoration:none;margin-left:20px;font-size:14px;}
-nav a:hover{color:#fff;}
-.hero{padding:100px 10%;text-align:center;background:linear-gradient(to right,#111,#1a1a1a);}
-.hero h2{font-size:40px;margin-bottom:20px;}
-.hero p{color:#bbb;margin-bottom:30px;}
-.btn{display:inline-block;padding:12px 30px;background:#fff;color:#000;text-decoration:none;border-radius:5px;font-weight:600;}
-.btn:hover{background:#ccc;}
-.section{padding:80px 10%;}
-.section h3{text-align:center;font-size:30px;margin-bottom:50px;}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-.card{background:#1a1a1a;padding:30px;border-radius:8px;border:1px solid #222;transition:0.3s;}
-.card:hover{transform:translateY(-5px);border-color:#444;}
-.card h4{margin-bottom:15px;}
-.card p{color:#aaa;font-size:14px;}
-.about{text-align:center;color:#bbb;}
-.contact{text-align:center;}
-footer{padding:30px 10%;text-align:center;background:#111;border-top:1px solid #222;color:#777;font-size:14px;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0c0c14;
+color:#eaeaea;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111122;
+border-bottom:1px solid #1f1f2e;
+}
+
+header h1{
+font-size:22px;
+font-weight:700;
+background:linear-gradient(45deg,#8e2de2,#00c9a7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#aaa;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#fff;
+}
+
+.hero{
+padding:120px 8%;
+text-align:center;
+background:linear-gradient(135deg,#141426,#1c1c35);
+}
+
+.hero h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(45deg,#8e2de2,#00c9a7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+color:#bbb;
+margin-bottom:40px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+background:linear-gradient(45deg,#8e2de2,#00c9a7);
+color:#fff;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+opacity:0.8;
+}
+
+.section{
+padding:100px 8%;
+}
+
+.section h3{
+text-align:center;
+font-size:34px;
+margin-bottom:60px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#161628;
+padding:40px;
+border-radius:12px;
+border:1px solid #222244;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#8e2de2;
+}
+
+.card h4{
+margin-bottom:15px;
+font-size:20px;
+}
+
+.card p{
+color:#aaa;
+font-size:14px;
+line-height:1.6;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+text-align:center;
+margin-top:60px;
+flex-wrap:wrap;
+}
+
+.stats div{
+margin:20px;
+}
+
+.stats h4{
+font-size:40px;
+background:linear-gradient(45deg,#8e2de2,#00c9a7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.about{
+text-align:center;
+max-width:800px;
+margin:auto;
+color:#bbb;
+line-height:1.8;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+padding:40px 8%;
+text-align:center;
+background:#111122;
+color:#777;
+border-top:1px solid #1f1f2e;
+}
+
 </style>
 </head>
 <body>
@@ -41,47 +181,68 @@ footer{padding:30px 10%;text-align:center;background:#111;border-top:1px solid #
 </header>
 
 <section class="hero">
-<h2>Headquarter of the Next Generation Technology Solutions</h2>
-<p>We help businesses grow with high-quality tech solutions and performance-driven lead generation.</p>
+<h2>Level Up Your <span>Business Growth</span></h2>
+<p>We help service-based businesses generate qualified leads, automate operations, and build powerful digital presence worldwide.</p>
 <a href="#contact" class="btn">Get Started</a>
 </section>
 
 <section class="section" id="services">
-<h3>Our Services</h3>
+<h3>Our Core Services</h3>
 <div class="services">
+
 <div class="card">
 <h4>Lead Generation</h4>
-<p>Cold calling and targeted outreach to bring high-quality clients for service-based businesses.</p>
+<p>Cold calling and outreach campaigns that bring real, high-intent clients for your business.</p>
 </div>
+
 <div class="card">
 <h4>Email Marketing</h4>
-<p>Conversion-focused email campaigns designed to increase response and boost revenue.</p>
+<p>Performance-driven email funnels designed to increase response and close more deals.</p>
 </div>
+
 <div class="card">
 <h4>Website Design</h4>
-<p>Fast, modern, and professional websites built to convert visitors into paying customers.</p>
+<p>Modern, fast, and conversion-focused websites built to represent your brand globally.</p>
 </div>
+
 <div class="card">
-<h4>Business Automation</h4>
-<p>Smart systems and tools to simplify operations and increase productivity.</p>
+<h4>Business Systems</h4>
+<p>Automation and smart workflows to simplify your operations and boost productivity.</p>
+</div>
+
+</div>
+
+<div class="stats">
+<div>
+<h4>150+</h4>
+<p>Leads Generated</p>
+</div>
+<div>
+<h4>30+</h4>
+<p>Happy Clients</p>
+</div>
+<div>
+<h4>5+</h4>
+<p>Countries Served</p>
 </div>
 </div>
+
 </section>
 
 <section class="section" id="about">
-<h3>About Us</h3>
+<h3>About NextGen HQ Tech</h3>
 <p class="about">
-NextGen HQ Tech is built to serve as the central hub for modern business growth. 
-We combine strategy, technology, and execution to help companies scale faster and operate smarter.
+NextGen HQ Tech operates as the headquarter of next generation business solutions. 
+We combine strategic outreach, technology, and execution to help businesses scale faster and compete globally.
 </p>
 </section>
 
 <section class="section contact" id="contact">
-<h3>Contact Us</h3>
+<h3>Let's Work Together</h3>
 <p>Email: your@email.com</p>
 <p>WhatsApp: +880XXXXXXXXXX</p>
 <br>
-<a href="mailto:your@email.com" class="btn">Send Message</a>
+<a href="mailto:your@email.com" class="btn">Contact Now</a>
 </section>
 
 <footer>
