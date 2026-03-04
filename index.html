@@ -3,112 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXTGEN HQ TECH | Next-Generation Technology Solutions</title>
+    <title>NEXTGEN HQ TECH | Premium BPO & Tech Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
         
-        body { font-family: 'Rajdhani', sans-serif; background-color: #05070a; color: #e2e8f0; }
+        :root {
+            --gold: #d4af37;
+            --deep-bg: #030712;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--deep-bg); color: #f3f4f6; scroll-behavior: smooth; }
         .tech-font { font-family: 'Orbitron', sans-serif; }
-        .gold-gradient { background: linear-gradient(90deg, #d4af37, #f9e29c, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-glass { background: rgba(10, 15, 25, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
-        .sidebar-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .hero-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,102,255,0.15) 0%, transparent 70%); z-index: -1; }
+        
+        .gold-text { background: linear-gradient(90deg, #d4af37, #f9e29c, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 20px; transition: 0.3s; }
+        .glass-card:hover { border-color: var(--gold); transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); }
+        
+        .sidebar { transition: transform 0.4s ease-in-out; }
+        .nav-active { background: rgba(3, 7, 18, 0.95); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 nav-glass">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-6">
-                <button onclick="toggleMenu()" class="text-2xl text-yellow-500 hover:scale-110 transition">
-                    <i class="fas fa-bars-staggered"></i>
-                </button>
-                
+                <button onclick="toggleMenu()" class="text-2xl text-yellow-500"><i class="fas fa-bars-staggered"></i></button>
                 <div class="flex items-center gap-3">
-                    <img src="https://i.ibb.co/LzN2KkR/nextgen-logo.png" alt="NEXTGEN Logo" class="h-12 w-auto drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]">
-                    <div class="hidden sm:block">
-                        <h1 class="tech-font font-bold text-xl gold-gradient tracking-widest uppercase">NextGen HQ</h1>
-                        <p class="text-[10px] text-blue-400 tracking-[0.2em] uppercase leading-none">The Future is Here</p>
-                    </div>
+                    <img src="https://i.ibb.co/LzN2KkR/nextgen-logo.png" alt="Logo" class="h-10 w-auto">
+                    <span class="tech-font font-bold text-xl gold-text hidden md:block">NEXTGEN HQ TECH</span>
                 </div>
             </div>
-
-            <div class="hidden md:flex items-center gap-6 text-sm">
-                <a href="mailto:nextgenhqtech@gmail.com" class="hover:text-yellow-500 transition"><i class="far fa-envelope mr-2"></i>Email Us</a>
-                <a href="https://www.nextgenhqtech.com" class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-black px-5 py-2 rounded-sm font-bold tech-font text-xs uppercase hover:opacity-90 transition">Visit Site</a>
+            <div class="hidden lg:flex gap-8 text-sm uppercase tracking-widest tech-font">
+                <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+                <a href="#services" class="hover:text-yellow-500 transition">Services</a>
+                <a href="#about" class="hover:text-yellow-500 transition">About</a>
+                <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
             </div>
+            <a href="https://www.nextgenhqtech.com" class="hidden sm:block border border-yellow-500/50 px-6 py-2 rounded text-xs tech-font hover:bg-yellow-500 hover:text-black transition uppercase">Visit Website</a>
         </div>
     </nav>
 
-    <div id="sideMenu" class="fixed top-0 left-0 h-full w-72 bg-[#0a0f19]/95 z-[60] -translate-x-full sidebar-transition border-r border-yellow-500/30">
-        <div class="p-8">
-            <button onclick="toggleMenu()" class="float-right text-yellow-500 text-2xl">&times;</button>
-            <div class="mt-12 space-y-8">
-                <h3 class="tech-font text-yellow-500 text-sm tracking-widest uppercase border-b border-yellow-500/20 pb-2">Menu</h3>
-                <ul class="space-y-6 text-lg font-medium">
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-home-alt w-6"></i> Home</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-layer-group w-6"></i> Solutions</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-microchip w-6"></i> Automation</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-chart-line w-6"></i> Digital Growth</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-id-badge w-6"></i> About Us</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 flex items-center gap-4 transition"><i class="fas fa-headset w-6"></i> Support</a></li>
-                </ul>
-            </div>
+    <div id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-gray-950 z-[60] -translate-x-full sidebar p-10 border-r border-yellow-500/20">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-2xl text-yellow-500">&times;</button>
+        <div class="mt-10">
+            <h2 class="tech-font text-yellow-500 mb-8 border-b border-yellow-500/20 pb-2 uppercase tracking-tighter">Navigation</h2>
+            <ul class="space-y-6 text-lg tracking-wide">
+                <li><a href="#home" onclick="toggleMenu()" class="hover:text-yellow-500 block">Home</a></li>
+                <li><a href="#services" onclick="toggleMenu()" class="hover:text-yellow-500 block">Solutions</a></li>
+                <li><a href="#about" onclick="toggleMenu()" class="hover:text-yellow-500 block">Process</a></li>
+                <li><a href="#contact" onclick="toggleMenu()" class="hover:text-yellow-500 block">Get A Quote</a></li>
+                <li class="pt-10">
+                    <p class="text-xs text-gray-500 mb-2 uppercase">Official Email</p>
+                    <p class="text-sm text-yellow-500 italic">nextgenhqtech@gmail.com</p>
+                </li>
+            </ul>
         </div>
     </div>
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/80 hidden z-[55]"></div>
 
-    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/70 hidden z-[55]"></div>
-
-    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
-        <div class="hero-glow"></div>
-        <div class="text-center z-10">
-            <div class="mb-4 inline-block py-1 px-4 border border-blue-500/30 rounded-full bg-blue-500/5 text-blue-400 text-xs tech-font uppercase tracking-tighter">
-                Innovation • Excellence • Growth
-            </div>
-            <h1 class="text-5xl md:text-8xl font-bold tech-font mb-6 leading-tight">
-                NEXTGEN <span class="gold-gradient">HQ TECH</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                Delivering <span class="text-white">Next-Generation Technology Solutions</span> through automation and digital transformation.
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+        <div class="relative z-10">
+            <h2 class="text-yellow-500 tech-font text-sm md:text-base mb-4 tracking-[0.5em] uppercase">High-Performance BPO & Digital Growth</h2>
+            <h1 class="text-5xl md:text-8xl font-bold tech-font mb-8">NEXTGEN <span class="gold-text">HQ TECH</span></h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                Empowering businesses worldwide with data-driven <span class="text-white">Lead Generation</span>, professional <span class="text-white">Cold Calling</span>, and cutting-edge <span class="text-white">Web Solutions</span>.
             </p>
-            <div class="flex flex-col sm:row justify-center gap-5">
-                <button class="bg-yellow-600 hover:bg-yellow-500 text-black px-10 py-4 font-bold tech-font rounded-sm transition uppercase text-sm">Our Services</button>
-                <button class="border border-white/20 hover:bg-white/10 text-white px-10 py-4 font-bold tech-font rounded-sm transition uppercase text-sm">Contact Project</button>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#contact" class="bg-yellow-600 hover:bg-yellow-500 text-black px-10 py-4 font-bold tech-font text-sm rounded-sm transition uppercase">Start Your Project</a>
+                <a href="#services" class="border border-white/20 hover:bg-white/10 px-10 py-4 font-bold tech-font text-sm rounded-sm transition uppercase">Our Expertise</a>
             </div>
         </div>
     </section>
 
-    <section class="py-10 border-t border-white/5 bg-black/40">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-                <p class="text-sm text-gray-500 uppercase tracking-widest mb-1">Reliability</p>
-                <p class="text-2xl tech-font font-bold text-white">High Quality</p>
+    <section id="services" class="py-24 px-6 bg-[#050810]">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="tech-font text-3xl md:text-5xl mb-4">Core <span class="gold-text">Solutions</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="glass-card p-10 text-center">
+                <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-headset"></i></div>
+                <h3 class="tech-font text-xl mb-4">Cold Calling</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Professional international outreach that converts prospects into loyal partners.</p>
             </div>
-            <div>
-                <p class="text-sm text-gray-500 uppercase tracking-widest mb-1">Efficiency</p>
-                <p class="text-2xl tech-font font-bold text-white">Automation</p>
+            <div class="glass-card p-10 text-center">
+                <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-bullseye"></i></div>
+                <h3 class="tech-font text-xl mb-4">Lead Generation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Highly targeted data mining and verified B2B/B2C lists for maximum sales ROI.</p>
             </div>
-            <div>
-                <p class="text-sm text-gray-500 uppercase tracking-widest mb-1">Scale</p>
-                <p class="text-2xl tech-font font-bold text-white">Digital Growth</p>
+            <div class="glass-card p-10 text-center">
+                <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-envelope-open-text"></i></div>
+                <h3 class="tech-font text-xl mb-4">Email Marketing</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Strategic campaigns and automation to keep your brand top-of-mind always.</p>
+            </div>
+            <div class="glass-card p-10 text-center">
+                <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-code"></i></div>
+                <h3 class="tech-font text-xl mb-4">Web Design</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Modern, responsive, and SEO-optimized websites designed for conversion.</p>
             </div>
         </div>
     </section>
+
+    <section class="py-20 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div><p class="text-4xl font-bold tech-font text-white mb-2">98%</p><p class="text-xs text-yellow-500 uppercase tracking-widest">Client Satisfaction</p></div>
+            <div><p class="text-4xl font-bold tech-font text-white mb-2">24/7</p><p class="text-xs text-yellow-500 uppercase tracking-widest">Operational Support</p></div>
+            <div><p class="text-4xl font-bold tech-font text-white mb-2">1M+</p><p class="text-xs text-yellow-500 uppercase tracking-widest">Leads Generated</p></div>
+            <div><p class="text-4xl font-bold tech-font text-white mb-2">10+</p><p class="text-xs text-yellow-500 uppercase tracking-widest">Global Partners</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass-card p-10 md:p-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl"></div>
+            <h2 class="tech-font text-3xl md:text-5xl mb-8">Ready to <span class="gold-text">Scale?</span></h2>
+            <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Your Name" class="bg-gray-900 border border-white/10 p-4 rounded focus:border-yellow-500 outline-none transition">
+                <input type="email" placeholder="Business Email" class="bg-gray-900 border border-white/10 p-4 rounded focus:border-yellow-500 outline-none transition">
+                <select class="bg-gray-900 border border-white/10 p-4 rounded focus:border-yellow-500 outline-none transition col-span-1 md:col-span-2">
+                    <option>Select Service</option>
+                    <option>Cold Calling</option>
+                    <option>Lead Generation</option>
+                    <option>Email Marketing</option>
+                    <option>Web Design</option>
+                </select>
+                <textarea rows="4" placeholder="Briefly describe your project requirements" class="bg-gray-900 border border-white/10 p-4 rounded focus:border-yellow-500 outline-none transition col-span-1 md:col-span-2"></textarea>
+                <button class="bg-yellow-600 hover:bg-yellow-500 text-black p-4 font-bold tech-font uppercase transition col-span-1 md:col-span-2">Submit Proposal</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="tech-font font-bold text-xl gold-text mb-2 tracking-widest">NEXTGEN HQ TECH</h3>
+                <p class="text-gray-500 text-sm italic">"Next-Generation Technology Solutions"</p>
+            </div>
+            <div class="flex gap-6 text-xl">
+                <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="text-xs text-gray-500 uppercase tracking-widest">
+                &copy; 2026 NEXTGEN HQ TECH. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
+        // Navbar scroll effect
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('nav-active');
+            else nav.classList.remove('nav-active');
+        };
+
+        // Sidebar toggle
         function toggleMenu() {
-            const menu = document.getElementById('sideMenu');
+            const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
-            if (menu.classList.contains('-translate-x-full')) {
-                menu.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-            } else {
-                menu.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
-            }
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
         }
     </script>
 </body>
