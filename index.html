@@ -5,49 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextGen HQ Tech</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
-font-family:Arial, sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
 background:#0f0f0f;
 color:white;
 }
 
+/* HEADER */
+
 header{
+position:fixed;
+width:100%;
+top:0;
+background:#000;
+padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
-background:#111;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
 z-index:1000;
+border-bottom:1px solid #222;
 }
 
-header h1{
-font-size:20px;
-color:#8e2de2;
+.logo{
+height:50px;
 }
 
 nav a{
-text-decoration:none;
 color:#aaa;
+text-decoration:none;
 margin-left:20px;
 font-size:14px;
+transition:0.3s;
 }
 
-nav a:hover{color:white;}
+nav a:hover{
+color:#8e2de2;
+}
+
+/* HERO */
 
 .hero{
-padding:160px 8%;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url('hero.jpg') center/cover no-repeat;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('images/hero.jpg') center/cover no-repeat;
+padding:0 20px;
 }
 
-.hero h2{
-font-size:48px;
+.hero h1{
+font-size:50px;
 }
 
 .hero span{
@@ -55,34 +76,39 @@ color:#8e2de2;
 }
 
 .btn{
-display:inline-block;
-padding:12px 30px;
-background:#8e2de2;
-color:white;
-text-decoration:none;
-border-radius:6px;
 margin-top:20px;
-font-weight:bold;
+padding:14px 30px;
+background:#8e2de2;
+border:none;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+cursor:pointer;
 }
 
-.section{
+/* SECTION */
+
+section{
 padding:100px 8%;
 }
 
-.section h3{
+h2{
 text-align:center;
-font-size:32px;
 margin-bottom:50px;
+font-size:32px;
 }
 
-.services{
+/* GRID */
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
 .card{
-background:#1a1a1a;
+background:#151515;
 padding:30px;
 border-radius:10px;
 border:1px solid #222;
@@ -94,143 +120,148 @@ transform:translateY(-8px);
 border-color:#8e2de2;
 }
 
-.card h4{
-color:#8e2de2;
-margin-bottom:10px;
-}
+/* PRICING */
 
-.stats{
-display:flex;
-justify-content:center;
-gap:80px;
-flex-wrap:wrap;
+.price{
 text-align:center;
 }
 
-.stats h4{
-font-size:40px;
-color:#8e2de2;
+/* FAQ */
+
+.faq-item{
+background:#151515;
+padding:20px;
+margin-bottom:15px;
+border-radius:6px;
+cursor:pointer;
 }
 
-.testimonial{
-background:#141414;
-padding:25px;
-border-radius:10px;
-}
+/* CONTACT */
 
 form{
 max-width:500px;
 margin:auto;
-text-align:center;
 }
 
 input,textarea{
 width:100%;
 padding:12px;
-margin:10px 0;
+margin-bottom:15px;
 background:#111;
 border:1px solid #222;
 color:white;
 border-radius:6px;
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:30px;
-background:#111;
+background:#000;
 border-top:1px solid #222;
 font-size:13px;
 color:#777;
 }
+
+@media(max-width:768px){
+.hero h1{
+font-size:30px;
+}
+nav{
+display:none;
+}
+}
+
 </style>
 </head>
 <body>
 
 <header>
-<h1>NextGen HQ Tech</h1>
+<img src="images/logo.png" class="logo">
+
 <nav>
 <a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#testimonials">Testimonials</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Powering the <span>Next Generation</span> of Business Growth</h2>
-<p>Professional lead generation, call center support, automation & digital solutions for global businesses.</p>
+<h1>Powering the <span>Next Generation</span> of Business</h1>
+<p>Professional lead generation, automation and technology solutions for global clients.</p>
 <a href="#contact" class="btn">Book Free Consultation</a>
 </section>
 
-<section class="section" id="services">
-<h3>Our Services</h3>
-
-<div class="services">
-<div class="card">
-<h4>Outbound Lead Generation</h4>
-<p>Targeted cold calling & outreach to bring high quality clients.</p>
-</div>
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
 
 <div class="card">
-<h4>Customer Support</h4>
-<p>Professional support agents for your business operations.</p>
+<h3>Lead Generation</h3>
+<p>High quality outbound campaigns to bring real clients.</p>
 </div>
 
 <div class="card">
-<h4>Digital Solutions</h4>
-<p>Website development & automation systems for growth.</p>
-</div>
+<h3>Automation</h3>
+<p>Smart workflow systems to scale your business.</p>
 </div>
 
-</section>
+<div class="card">
+<h3>Website Development</h3>
+<p>Modern fast websites built for performance.</p>
+</div>
 
-<section class="section">
-<h3>Our Results</h3>
-<div class="stats">
-<div>
-<h4>200+</h4>
-<p>Projects</p>
-</div>
-<div>
-<h4>50+</h4>
-<p>Clients</p>
-</div>
-<div>
-<h4>10+</h4>
-<p>Countries</p>
-</div>
 </div>
 </section>
 
-<section class="section" id="testimonials">
-<h3>Client Testimonials</h3>
-
-<div class="services">
-<div class="testimonial">
-<p>"Excellent service and professional team. Highly recommended!"</p>
-<br>
-<strong>- Client A</strong>
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="grid">
+<div class="card"><p>Project 1</p></div>
+<div class="card"><p>Project 2</p></div>
+<div class="card"><p>Project 3</p></div>
 </div>
-
-<div class="testimonial">
-<p>"They helped us scale our lead generation system effectively."</p>
-<br>
-<strong>- Client B</strong>
-</div>
-</div>
-
 </section>
 
-<section class="section" id="contact">
-<h3>Contact Us</h3>
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="grid">
 
-<form action="https://formspree.io/f/yourformid" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" rows="4" placeholder="Your Message"></textarea>
+<div class="card price">
+<h3>Starter</h3>
+<p>$199 / Month</p>
+<button class="btn">Choose</button>
+</div>
+
+<div class="card price">
+<h3>Pro</h3>
+<p>$499 / Month</p>
+<button class="btn">Choose</button>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>FAQ</h2>
+<div class="faq-item">
+<p>What services do you provide?</p>
+</div>
+<div class="faq-item">
+<p>How long does project take?</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="Message"></textarea>
 <button class="btn" type="submit">Send Message</button>
 </form>
-
 </section>
 
 <footer>
