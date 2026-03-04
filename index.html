@@ -1,322 +1,353 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXTGEN HQ TECH | Next-Generation BPO & Digital Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextGen HQ Tech</title>
 
-        :root {
-            --gold: #d4af37;
-            --gold-light: #f9e29c;
-            --deep-dark: #020617;
-            --accent-blue: #3b82f6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: var(--deep-dark);
-            color: #f1f5f9;
-            overflow-x: hidden;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0B1120;color:#E5E7EB;overflow-x:hidden;}
+html{scroll-behavior:smooth}
 
-        .tech-font { font-family: 'Orbitron', sans-serif; }
+/* HEADER */
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 6%;
+background:rgba(17,24,39,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
 
-        /* Custom Animations */
-        @keyframes glow {
-            0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3)); }
-            50% { filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)); }
-        }
+.left{
+display:flex;
+align-items:center;
+gap:15px;
+}
 
-        .animate-glow { animation: glow 3s infinite; }
+.hamburger{
+font-size:26px;
+cursor:pointer;
+}
 
-        .gold-gradient {
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), #b8860b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.logo{
+height:55px;
+}
 
-        .glass-nav {
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-        }
+.tagline{
+font-size:14px;
+color:#9CA3AF;
+}
 
-        .service-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:#111827;
+padding-top:80px;
+transition:0.3s;
+z-index:999;
+}
+.sidebar a{
+display:block;
+padding:14px 25px;
+color:#E5E7EB;
+text-decoration:none;
+}
+.sidebar a:hover{
+background:#3B82F6;
+}
+.sidebar.active{left:0}
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: 0.5s;
-        }
+/* HERO */
+.hero{
+padding:140px 6%;
+text-align:center;
+background:linear-gradient(135deg,#2563EB,#4F46E5);
+color:white;
+}
+.hero h1{
+font-size:48px;
+font-weight:800;
+margin-bottom:20px;
+}
+.hero p{
+max-width:750px;
+margin:auto;
+opacity:0.9;
+}
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 32px;
+background:white;
+color:#111827;
+font-weight:600;
+border-radius:8px;
+text-decoration:none;
+}
 
-        .service-card:hover::before { left: 100%; }
+/* SECTION */
+section{padding:100px 6%;}
+h2{text-align:center;font-size:32px;margin-bottom:60px;}
 
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
 
-        .hero-mesh {
-            position: absolute;
-            width: 100%; height: 100%;
-            background-image: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 30%);
-            z-index: -1;
-        }
+.card{
+background:#111827;
+padding:30px;
+border-radius:14px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+.card:hover{
+transform:translateY(-8px);
+border-color:#3B82F6;
+}
 
-        /* Form Styling */
-        input, textarea, select {
-            background: rgba(255, 255, 255, 0.02) !important;
-            border: 1px solid rgba(212, 175, 55, 0.2) !important;
-            color: white !important;
-            transition: 0.3s;
-        }
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+text-align:center;
+gap:40px;
+}
+.stat h3{
+font-size:38px;
+color:#3B82F6;
+}
 
-        input:focus, textarea:focus {
-            border-color: var(--gold) !important;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-            outline: none;
-        }
+/* TESTIMONIAL */
+.testimonial{
+background:#111827;
+padding:40px;
+border-radius:14px;
+max-width:800px;
+margin:auto;
+text-align:center;
+}
 
-        .sidebar-menu {
-            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
+/* FAQ */
+.faq-item{
+background:#111827;
+margin-bottom:15px;
+padding:20px;
+border-radius:10px;
+cursor:pointer;
+}
+.faq-answer{display:none;margin-top:10px;color:#9CA3AF}
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--deep-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
-    </style>
+/* CONTACT */
+form{
+max-width:600px;
+margin:auto;
+}
+input,textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#0B1120;
+border:1px solid #374151;
+color:white;
+border-radius:8px;
+}
+button{
+padding:14px;
+background:#3B82F6;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+width:100%;
+}
+
+/* NEWSLETTER */
+.newsletter{
+text-align:center;
+background:linear-gradient(135deg,#2563EB,#4F46E5);
+padding:70px 6%;
+border-radius:20px;
+color:white;
+}
+
+/* FOOTER */
+footer{
+background:#111827;
+padding:60px 6%;
+}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+.footer-grid h4{margin-bottom:15px}
+.footer-grid a{
+display:block;
+color:#9CA3AF;
+text-decoration:none;
+margin-bottom:8px;
+}
+.footer-grid a:hover{color:white}
+.copy{
+text-align:center;
+margin-top:40px;
+color:#6B7280;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:32px}
+.logo{height:45px}
+.tagline{display:none}
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="fixed w-full z-[100] glass-nav">
-        <div class="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
-            <div class="flex items-center gap-8">
-                <button onclick="toggleSidebar()" class="group flex flex-col gap-1.5 focus:outline-none">
-                    <span class="w-8 h-0.5 bg-yellow-500 transition-all group-hover:w-5"></span>
-                    <span class="w-6 h-0.5 bg-yellow-500 transition-all group-hover:w-8"></span>
-                    <span class="w-8 h-0.5 bg-yellow-500 transition-all group-hover:w-4"></span>
-                </button>
-                
-                <a href="https://github.com/soyakcp/nextgenhqtech" class="flex items-center gap-4 group">
-                    <img src="images/logo.png" alt="NEXTGEN HQ TECH" class="h-14 w-auto animate-glow transition-transform group-hover:scale-110">
-                    <div class="flex flex-col border-l border-white/10 pl-4">
-                        <span class="tech-font font-black text-2xl tracking-tighter gold-gradient">NEXTGEN HQ</span>
-                        <span class="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-bold">Solutions Hub</span>
-                    </div>
-                </a>
-            </div>
+<div class="sidebar" id="sidebar">
+<a href="#">Home</a>
+<a href="#features">Features</a>
+<a href="#process">Process</a>
+<a href="#case">Case Studies</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
 
-            <div class="hidden lg:flex items-center gap-10">
-                <ul class="flex gap-8 tech-font text-[11px] uppercase tracking-[0.2em] font-semibold">
-                    <li><a href="#home" class="hover:text-yellow-500 transition">Base</a></li>
-                    <li><a href="#services" class="hover:text-yellow-500 transition">Ecosystem</a></li>
-                    <li><a href="#process" class="hover:text-yellow-500 transition">Protocol</a></li>
-                    <li><a href="#contact" class="hover:text-yellow-500 transition">Interface</a></li>
-                </ul>
-                <div class="h-8 w-[1px] bg-white/10 mx-2"></div>
-                <a href="#contact" class="px-6 py-2 border border-yellow-500/50 text-yellow-500 tech-font text-[10px] uppercase font-bold hover:bg-yellow-500 hover:text-black transition duration-500">
-                    Connect Now
-                </a>
-            </div>
-        </div>
-    </nav>
+<header>
+<div class="left">
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<img src="images/logo.png" class="logo">
+<div class="tagline">Next-Generation Technology Solutions</div>
+</div>
+</header>
 
-    <div id="sidebar" class="fixed top-0 left-0 h-full w-[350px] bg-[#010409] z-[110] -translate-x-full sidebar-menu border-r border-yellow-500/30 p-12">
-        <button onclick="toggleSidebar()" class="absolute top-8 right-8 text-3xl text-yellow-500 hover:rotate-90 transition-transform">&times;</button>
-        
-        <div class="mt-16">
-            <img src="images/logo.png" alt="Logo" class="h-16 mb-8 opacity-50">
-            <h3 class="tech-font text-xs text-blue-500 uppercase tracking-widest mb-10 border-b border-white/5 pb-4">Central Command</h3>
-            
-            <ul class="space-y-8 tech-font text-sm uppercase tracking-widest">
-                <li><a href="#home" onclick="toggleSidebar()" class="hover:text-yellow-500 flex items-center gap-4 transition"><span class="text-[10px] text-gray-600">01</span> Home Base</a></li>
-                <li><a href="#services" onclick="toggleSidebar()" class="hover:text-yellow-500 flex items-center gap-4 transition"><span class="text-[10px] text-gray-600">02</span> Agency Services</a></li>
-                <li><a href="#about" onclick="toggleSidebar()" class="hover:text-yellow-500 flex items-center gap-4 transition"><span class="text-[10px] text-gray-600">03</span> Our Intelligence</a></li>
-                <li><a href="#contact" onclick="toggleSidebar()" class="hover:text-yellow-500 flex items-center gap-4 transition"><span class="text-[10px] text-gray-600">04</span> Transmission</a></li>
-            </ul>
+<section class="hero">
+<h1>Empowering Digital Growth for Modern Businesses</h1>
+<p>We build scalable automation systems, lead generation engines, and enterprise digital solutions that power the next generation economy.</p>
+<a href="#contact" class="btn">Start Your Project</a>
+</section>
 
-            <div class="mt-24 space-y-6">
-                <div class="group">
-                    <p class="text-[10px] text-gray-500 uppercase mb-1">Encrypted Mail</p>
-                    <a href="mailto:nextgenhqtech@gmail.com" class="text-sm font-bold text-yellow-500 hover:underline">nextgenhqtech@gmail.com</a>
-                </div>
-                <div>
-                    <p class="text-[10px] text-gray-500 uppercase mb-1">Global HQ</p>
-                    <p class="text-xs text-white">Anandapur, Savar, Dhaka 1340</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-[105]"></div>
+<section id="features">
+<h2>Core Features</h2>
+<div class="grid">
+<div class="card"><h3>Automation Systems</h3><p>Advanced workflows to scale operations efficiently.</p></div>
+<div class="card"><h3>Lead Generation</h3><p>High converting outreach systems for rapid growth.</p></div>
+<div class="card"><h3>Customer Support</h3><p>24/7 omnichannel support solutions.</p></div>
+<div class="card"><h3>Web Development</h3><p>Fast, responsive and scalable web platforms.</p></div>
+</div>
+</section>
 
-    <section id="home" class="relative min-h-screen flex items-center px-6 pt-24">
-        <div class="hero-mesh"></div>
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 items-center gap-16">
-            <div class="text-left space-y-8">
-                <div class="inline-flex items-center gap-3 px-4 py-2 bg-blue-500/5 border border-blue-500/20 rounded-full">
-                    <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-                    <span class="tech-font text-[10px] text-blue-400 uppercase font-bold tracking-widest">Systems Online: v4.0.26</span>
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black tech-font leading-[0.9] uppercase">
-                    BEYOND <br> <span class="gold-gradient">LIMITS</span>
-                </h1>
-                <p class="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed font-light">
-                    Transforming your business through high-impact <span class="text-white font-bold">Cold Calling</span>, strategic <span class="text-white font-bold">Lead Generation</span>, and futuristic <span class="text-white font-bold">Web Development</span>. We don't just solve problems; we engineer growth.
-                </p>
-                <div class="flex flex-wrap gap-6 pt-6">
-                    <a href="#contact" class="bg-yellow-600 hover:bg-yellow-500 text-black px-10 py-4 font-bold tech-font text-xs uppercase transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">Launch Project</a>
-                    <a href="#services" class="group flex items-center gap-4 tech-font text-xs uppercase font-bold text-white transition hover:text-yellow-500">
-                        Explore Protocols <i class="fas fa-arrow-right-long group-hover:translate-x-3 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="relative hidden lg:block">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent blur-3xl opacity-30"></div>
-                <img src="images/logo.png" alt="Tech Graphic" class="w-full h-auto drop-shadow-[0_0_100px_rgba(59,130,246,0.3)] animate-glow">
-            </div>
-        </div>
-    </section>
+<section id="process">
+<h2>Our Process</h2>
+<div class="grid">
+<div class="card"><h3>01 Strategy</h3><p>Understanding your goals and infrastructure.</p></div>
+<div class="card"><h3>02 Build</h3><p>Developing scalable automation & tech systems.</p></div>
+<div class="card"><h3>03 Deploy</h3><p>Launching optimized growth solutions.</p></div>
+<div class="card"><h3>04 Scale</h3><p>Continuous optimization and support.</p></div>
+</div>
+</section>
 
-    <section id="services" class="py-32 px-6 bg-[#010409]">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-                <div class="space-y-4">
-                    <h2 class="tech-font text-4xl md:text-6xl font-black uppercase"><span class="gold-gradient">Master</span> Services</h2>
-                    <p class="text-gray-500 max-w-md tracking-wide">Integrated solutions designed for next-generation scalability and market dominance.</p>
-                </div>
-                <div class="text-right">
-                    <span class="tech-font text-9xl font-black text-white/5 leading-none">02</span>
-                </div>
-            </div>
+<section id="case">
+<h2>Case Studies</h2>
+<div class="grid">
+<div class="card"><h3>FinTech Growth</h3><p>Boosted sales by 300% through automation.</p></div>
+<div class="card"><h3>Ecommerce Scaling</h3><p>Reduced support cost by 40% with AI workflows.</p></div>
+</div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="service-card p-10 group">
-                    <div class="text-yellow-500 text-4xl mb-8 transition-transform group-hover:scale-110 group-hover:rotate-12">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="tech-font text-lg font-bold mb-4 uppercase tracking-tighter">Cold Calling</h3>
-                    <ul class="text-sm text-gray-500 space-y-3 font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> International Outreach</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> Expert Closer Team</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> 24/7 Availability</li>
-                    </ul>
-                    <div class="mt-8 pt-8 border-t border-white/5 group-hover:border-yellow-500/30">
-                        <a href="#" class="text-[10px] tech-font font-bold text-gray-400 group-hover:text-yellow-500 transition">DEPLOY SERVICE &rarr;</a>
-                    </div>
-                </div>
+<section>
+<h2>Performance Metrics</h2>
+<div class="stats">
+<div class="stat"><h3>250+</h3><p>Clients</p></div>
+<div class="stat"><h3>98%</h3><p>Satisfaction</p></div>
+<div class="stat"><h3>24/7</h3><p>Support</p></div>
+</div>
+</section>
 
-                <div class="service-card p-10 group">
-                    <div class="text-blue-500 text-4xl mb-8 transition-transform group-hover:scale-110 group-hover:-rotate-12">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3 class="tech-font text-lg font-bold mb-4 uppercase tracking-tighter">Lead Generation</h3>
-                    <ul class="text-sm text-gray-500 space-y-3 font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> B2B Data Mining</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> LinkedIn Scraping</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> Verified Emails</li>
-                    </ul>
-                    <div class="mt-8 pt-8 border-t border-white/5 group-hover:border-blue-500/30">
-                        <a href="#" class="text-[10px] tech-font font-bold text-gray-400 group-hover:text-blue-500 transition">EXTRACT DATA &rarr;</a>
-                    </div>
-                </div>
+<section>
+<h2>Client Testimonial</h2>
+<div class="testimonial">
+<p>"NextGen HQ Tech transformed our digital operations and dramatically increased our customer engagement."</p>
+</div>
+</section>
 
-                <div class="service-card p-10 group">
-                    <div class="text-yellow-500 text-4xl mb-8 transition-transform group-hover:scale-110 group-hover:rotate-12">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>
-                    <h3 class="tech-font text-lg font-bold mb-4 uppercase tracking-tighter">Email Marketing</h3>
-                    <ul class="text-sm text-gray-500 space-y-3 font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> Bulk Campaigns</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> Automation Flows</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-yellow-600"></i> High Inbox Rates</li>
-                    </ul>
-                    <div class="mt-8 pt-8 border-t border-white/5 group-hover:border-yellow-500/30">
-                        <a href="#" class="text-[10px] tech-font font-bold text-gray-400 group-hover:text-yellow-500 transition">SEND BROADCAST &rarr;</a>
-                    </div>
-                </div>
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" onclick="toggleFAQ(this)">
+What services do you provide?
+<div class="faq-answer">We provide automation, lead generation, digital infrastructure and support services.</div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+Do you offer 24/7 support?
+<div class="faq-answer">Yes, we operate globally with 24/7 availability.</div>
+</div>
+</section>
 
-                <div class="service-card p-10 group">
-                    <div class="text-blue-500 text-4xl mb-8 transition-transform group-hover:scale-110 group-hover:-rotate-12">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="tech-font text-lg font-bold mb-4 uppercase tracking-tighter">UI/UX Design</h3>
-                    <ul class="text-sm text-gray-500 space-y-3 font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> Modern Web Apps</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> SEO Optimization</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-[10px] text-blue-600"></i> E-commerce Ready</li>
-                    </ul>
-                    <div class="mt-8 pt-8 border-t border-white/5 group-hover:border-blue-500/30">
-                        <a href="#" class="text-[10px] tech-font font-bold text-gray-400 group-hover:text-blue-500 transition">BUILD INTERFACE &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="newsletter">
+<h2>Join Our Newsletter</h2>
+<p>Stay updated with tech insights and growth strategies.</p>
+</section>
 
-    <section class="py-24 border-y border-white/5 bg-black/50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 relative">
-            <div class="text-center group">
-                <p class="text-5xl md:text-7xl font-black tech-font text-white mb-2 transition group-hover:text-yellow-500">250+</p>
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">Global Units</p>
-            </div>
-            <div class="text-center group">
-                <p class="text-5xl md:text-7xl font-black tech-font text-white mb-2 transition group-hover:text-blue-500">1M+</p>
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">Leads Farmed</p>
-            </div>
-            <div class="text-center group">
-                <p class="text-5xl md:text-7xl font-black tech-font text-white mb-2 transition group-hover:text-yellow-500">98%</p>
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">Sync Accuracy</p>
-            </div>
-            <div class="text-center group">
-                <p class="text-5xl md:text-7xl font-black tech-font text-white mb-2 transition group-hover:text-blue-500">24/7</p>
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">Active Stream</p>
-            </div>
-        </div>
-    </section>
+<section id="contact">
+<h2>Contact Us</h2>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
 
-    <section id="process" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-            <div class="space-y-12">
-                <h2 class="tech-font text-4xl md:text-5xl font-black uppercase tracking-tighter">Strategic <span class="gold-gradient">Protocol</span></h2>
-                <div class="space-y-10">
-                    <div class="flex gap-8 group">
-                        <div class="w-16 h-16 shrink-0 bg-yellow-500/10 flex items-center justify-center tech-font font-black text-2xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500 group-hover:text-black transition duration-500">01</div>
-                        <div>
-                            <h4 class="tech-font text-lg font-bold mb-2 uppercase text-white">Analysis & Intel</h4>
-                            <p class="text-gray-500 text-sm">Deep dive into market metrics to identify core leverage points.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8 group">
-                        <div class="w-16 h-16 shrink-0 bg-blue-500/10 flex items-center justify-center tech-font font-black text-2xl text-blue-500 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-black transition duration-500">02</div>
-                        <div>
-                            <h4 class="tech-font text-lg font-bold mb-2 uppercase text-white">Execution Layer</h4>
-                            <p class="text-gray-500 text-sm">Deploying our expert closing units and data extractors into action.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8 group">
-                        <div class="w-16 h-16 shrink-0 bg-yellow-500/10 flex items-center justify-center tech-font font-black text-2xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500 group-hover:text-black transition duration-500">03</div>
-                        <div>
-                            <h4 class="tech-font text-lg font-bold mb-2 uppercase text-white">Scaling Mode</h4>
-                            <p class="text-gray-500 text-sm">Refining the funnel for explosive, sustainable growth patterns.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-gradient-to-br from-yellow-500/5 to-blue-500/5 p-1 border border-white/5 rounded-2xl relative">
-                <div class="absolute inset-0 bg-black/40 backdrop-blur-3xl rounde
+<footer>
+<div class="footer-grid">
+<div>
+<h4>Company</h4>
+<a href="#">About</a>
+<a href="#">Careers</a>
+<a href="#">Blog</a>
+</div>
+<div>
+<h4>Services</h4>
+<a href="#">Automation</a>
+<a href="#">Lead Generation</a>
+<a href="#">Web Development</a>
+</div>
+<div>
+<h4>Support</h4>
+<a href="#">Help Center</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms</a>
+</div>
+</div>
+<div class="copy">
+© 2026 NextGen HQ Tech. All rights reserved.
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active");
+}
+function toggleFAQ(el){
+var ans=el.querySelector(".faq-answer");
+ans.style.display=ans.style.display==="block"?"none":"block";
+}
+</script>
+
+</body>
+</html>
