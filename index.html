@@ -25,50 +25,67 @@ color:white;
 /* HEADER */
 
 header{
-position:fixed;
-width:100%;
-top:0;
-background:#000;
-padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:1000;
+padding:20px 8%;
+background:#000;
 border-bottom:1px solid #222;
 }
 
 .logo{
-height:50px;
+height:90px; /* বড় logo */
 }
 
-nav a{
-color:#aaa;
+/* 50% width for logo container */
+.logo-container{
+width:50%;
+}
+
+/* MENU */
+
+.menu{
+position:relative;
+}
+
+.menu-btn{
+font-size:30px;
+cursor:pointer;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+right:0;
+background:#111;
+border:1px solid #222;
+border-radius:8px;
+min-width:180px;
+}
+
+.dropdown a{
+display:block;
+padding:12px;
 text-decoration:none;
-margin-left:20px;
-font-size:14px;
-transition:0.3s;
+color:#aaa;
 }
 
-nav a:hover{
-color:#8e2de2;
+.dropdown a:hover{
+background:#222;
+color:white;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 text-align:center;
+padding:150px 8%;
 background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 url('images/hero.jpg') center/cover no-repeat;
-padding:0 20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:45px;
 }
 
 .hero span{
@@ -76,15 +93,14 @@ color:#8e2de2;
 }
 
 .btn{
+display:inline-block;
 margin-top:20px;
 padding:14px 30px;
 background:#8e2de2;
-border:none;
 color:white;
-border-radius:6px;
 text-decoration:none;
+border-radius:6px;
 font-weight:600;
-cursor:pointer;
 }
 
 /* SECTION */
@@ -96,10 +112,8 @@ padding:100px 8%;
 h2{
 text-align:center;
 margin-bottom:50px;
-font-size:32px;
+font-size:30px;
 }
-
-/* GRID */
 
 .grid{
 display:grid;
@@ -118,22 +132,6 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-8px);
 border-color:#8e2de2;
-}
-
-/* PRICING */
-
-.price{
-text-align:center;
-}
-
-/* FAQ */
-
-.faq-item{
-background:#151515;
-padding:20px;
-margin-bottom:15px;
-border-radius:6px;
-cursor:pointer;
 }
 
 /* CONTACT */
@@ -166,10 +164,10 @@ color:#777;
 
 @media(max-width:768px){
 .hero h1{
-font-size:30px;
+font-size:28px;
 }
-nav{
-display:none;
+.logo{
+height:60px;
 }
 }
 
@@ -178,14 +176,23 @@ display:none;
 <body>
 
 <header>
-<img src="images/logo.png" class="logo">
 
-<nav>
+<div class="logo-container">
+<img src="images/logo.png" class="logo">
+</div>
+
+<div class="menu">
+<div class="menu-btn" onclick="toggleMenu()">⋮</div>
+
+<div class="dropdown" id="dropdown">
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
-<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
-</nav>
+<a href="#about">About</a>
+</div>
+
+</div>
+
 </header>
 
 <section class="hero">
@@ -196,6 +203,7 @@ display:none;
 
 <section id="services">
 <h2>Our Services</h2>
+
 <div class="grid">
 
 <div class="card">
@@ -218,55 +226,51 @@ display:none;
 
 <section id="portfolio">
 <h2>Portfolio</h2>
+
 <div class="grid">
 <div class="card"><p>Project 1</p></div>
 <div class="card"><p>Project 2</p></div>
 <div class="card"><p>Project 3</p></div>
 </div>
-</section>
 
-<section id="pricing">
-<h2>Pricing</h2>
-<div class="grid">
-
-<div class="card price">
-<h3>Starter</h3>
-<p>$199 / Month</p>
-<button class="btn">Choose</button>
-</div>
-
-<div class="card price">
-<h3>Pro</h3>
-<p>$499 / Month</p>
-<button class="btn">Choose</button>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>FAQ</h2>
-<div class="faq-item">
-<p>What services do you provide?</p>
-</div>
-<div class="faq-item">
-<p>How long does project take?</p>
-</div>
 </section>
 
 <section id="contact">
 <h2>Contact Us</h2>
+
 <form>
 <input type="text" placeholder="Your Name">
 <input type="email" placeholder="Your Email">
 <textarea rows="4" placeholder="Message"></textarea>
 <button class="btn" type="submit">Send Message</button>
 </form>
+
 </section>
 
 <footer>
 © 2026 NextGen HQ Tech | All Rights Reserved
 </footer>
+
+<script>
+
+function toggleMenu(){
+var menu = document.getElementById("dropdown");
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
+}
+
+document.addEventListener("click", function(event){
+var menu = document.getElementById("dropdown");
+var btn = document.querySelector(".menu-btn");
+if(!menu.contains(event.target) && !btn.contains(event.target)){
+menu.style.display = "none";
+}
+});
+
+</script>
 
 </body>
 </html>
