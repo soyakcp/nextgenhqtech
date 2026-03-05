@@ -1,353 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NextGen HQ Tech</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0B1120;color:#E5E7EB;overflow-x:hidden;}
-html{scroll-behavior:smooth}
-
-/* HEADER */
-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 6%;
-background:rgba(17,24,39,0.7);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.left{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.hamburger{
-font-size:26px;
-cursor:pointer;
-}
-
-.logo{
-height:55px;
-}
-
-.tagline{
-font-size:14px;
-color:#9CA3AF;
-}
-
-/* SIDEBAR */
-.sidebar{
-position:fixed;
-left:-260px;
-top:0;
-width:260px;
-height:100%;
-background:#111827;
-padding-top:80px;
-transition:0.3s;
-z-index:999;
-}
-.sidebar a{
-display:block;
-padding:14px 25px;
-color:#E5E7EB;
-text-decoration:none;
-}
-.sidebar a:hover{
-background:#3B82F6;
-}
-.sidebar.active{left:0}
-
-/* HERO */
-.hero{
-padding:140px 6%;
-text-align:center;
-background:linear-gradient(135deg,#2563EB,#4F46E5);
-color:white;
-}
-.hero h1{
-font-size:48px;
-font-weight:800;
-margin-bottom:20px;
-}
-.hero p{
-max-width:750px;
-margin:auto;
-opacity:0.9;
-}
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:14px 32px;
-background:white;
-color:#111827;
-font-weight:600;
-border-radius:8px;
-text-decoration:none;
-}
-
-/* SECTION */
-section{padding:100px 6%;}
-h2{text-align:center;font-size:32px;margin-bottom:60px;}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:#111827;
-padding:30px;
-border-radius:14px;
-transition:0.3s;
-border:1px solid rgba(255,255,255,0.05);
-}
-.card:hover{
-transform:translateY(-8px);
-border-color:#3B82F6;
-}
-
-/* STATS */
-.stats{
-display:flex;
-justify-content:space-around;
-flex-wrap:wrap;
-text-align:center;
-gap:40px;
-}
-.stat h3{
-font-size:38px;
-color:#3B82F6;
-}
-
-/* TESTIMONIAL */
-.testimonial{
-background:#111827;
-padding:40px;
-border-radius:14px;
-max-width:800px;
-margin:auto;
-text-align:center;
-}
-
-/* FAQ */
-.faq-item{
-background:#111827;
-margin-bottom:15px;
-padding:20px;
-border-radius:10px;
-cursor:pointer;
-}
-.faq-answer{display:none;margin-top:10px;color:#9CA3AF}
-
-/* CONTACT */
-form{
-max-width:600px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-background:#0B1120;
-border:1px solid #374151;
-color:white;
-border-radius:8px;
-}
-button{
-padding:14px;
-background:#3B82F6;
-border:none;
-color:white;
-border-radius:8px;
-cursor:pointer;
-width:100%;
-}
-
-/* NEWSLETTER */
-.newsletter{
-text-align:center;
-background:linear-gradient(135deg,#2563EB,#4F46E5);
-padding:70px 6%;
-border-radius:20px;
-color:white;
-}
-
-/* FOOTER */
-footer{
-background:#111827;
-padding:60px 6%;
-}
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
-}
-.footer-grid h4{margin-bottom:15px}
-.footer-grid a{
-display:block;
-color:#9CA3AF;
-text-decoration:none;
-margin-bottom:8px;
-}
-.footer-grid a:hover{color:white}
-.copy{
-text-align:center;
-margin-top:40px;
-color:#6B7280;
-}
-
-@media(max-width:768px){
-.hero h1{font-size:32px}
-.logo{height:45px}
-.tagline{display:none}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen HQ Tech | B2B Growth Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #020617; color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.4); }
+        .blue-gradient { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); }
+    </style>
 </head>
-
 <body>
 
-<div class="sidebar" id="sidebar">
-<a href="#">Home</a>
-<a href="#features">Features</a>
-<a href="#process">Process</a>
-<a href="#case">Case Studies</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-</div>
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center font-bold">N</div>
+            <span class="font-bold text-xl">NextGen <span class="text-blue-400">HQ Tech</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+            <a href="#" class="hover:text-blue-400">Home</a>
+            <a href="#services" class="hover:text-blue-400">Services</a>
+            <a href="#process" class="hover:text-blue-400">Process</a>
+            <a href="#about" class="hover:text-blue-400">About</a>
+        </div>
+        <button class="bg-blue-600 px-5 py-2 rounded-lg text-sm font-bold">Contact Us</button>
+    </nav>
 
-<header>
-<div class="left">
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-<img src="images/logo.png" class="logo">
-<div class="tagline">Next-Generation Technology Solutions</div>
-</div>
-</header>
+    <header class="py-20 px-6 text-center">
+        <div class="inline-block border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-bold px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+            B2B Growth Solutions
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold max-w-5xl mx-auto leading-tight">
+            High-Performance <span class="text-blue-500">Lead Generation</span> & Professional Call Center Solutions
+        </h1>
+        <p class="text-gray-400 mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
+            We help businesses scale with data-driven outbound campaigns, expert cold calling, and end-to-end lead management — delivering qualified prospects ready to convert.
+        </p>
+        <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+            <button class="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 transition-all">Book Free Consultation →</button>
+            <button class="bg-slate-800 hover:bg-slate-700 px-10 py-4 rounded-xl font-bold text-lg border border-slate-700 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-play text-sm"></i> View Services
+            </button>
+        </div>
+    </header>
 
-<section class="hero">
-<h1>Empowering Digital Growth for Modern Businesses</h1>
-<p>We build scalable automation systems, lead generation engines, and enterprise digital solutions that power the next generation economy.</p>
-<a href="#contact" class="btn">Start Your Project</a>
-</section>
+    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-y border-slate-800/50">
+        <div><h2 class="text-4xl font-bold mb-1">250+</h2><p class="text-gray-500 text-sm">Clients Served</p></div>
+        <div><h2 class="text-4xl font-bold mb-1">98%</h2><p class="text-gray-500 text-sm">Client Satisfaction</p></div>
+        <div><h2 class="text-4xl font-bold mb-1">24/7</h2><p class="text-gray-500 text-sm">Support Available</p></div>
+        <div><h2 class="text-4xl font-bold mb-1">15+</h2><p class="text-gray-500 text-sm">Countries Covered</p></div>
+    </section>
 
-<section id="features">
-<h2>Core Features</h2>
-<div class="grid">
-<div class="card"><h3>Automation Systems</h3><p>Advanced workflows to scale operations efficiently.</p></div>
-<div class="card"><h3>Lead Generation</h3><p>High converting outreach systems for rapid growth.</p></div>
-<div class="card"><h3>Customer Support</h3><p>24/7 omnichannel support solutions.</p></div>
-<div class="card"><h3>Web Development</h3><p>Fast, responsive and scalable web platforms.</p></div>
-</div>
-</section>
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-blue-500 font-bold tracking-widest text-sm uppercase">Our Services</span>
+            <h2 class="text-4xl font-bold mt-2">Solutions That <span class="text-blue-500">Drive Results</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-10 rounded-3xl hover:border-blue-500/50 transition-all group">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                    <i class="fa-solid fa-phone text-2xl text-blue-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Cold Calling</h3>
+                <p class="text-gray-400 leading-relaxed">Professional outbound calling teams that connect with decision-makers and generate qualified appointments.</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-bullseye text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Lead Generation</h3>
+                <p class="text-gray-400 leading-relaxed">Multi-channel lead generation strategies that identify and nurture high-value prospects.</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-chart-line text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Outbound Sales</h3>
+                <p class="text-gray-400 leading-relaxed">End-to-end sales campaigns powered by data analytics and proven scripts to maximize conversion.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="process">
-<h2>Our Process</h2>
-<div class="grid">
-<div class="card"><h3>01 Strategy</h3><p>Understanding your goals and infrastructure.</p></div>
-<div class="card"><h3>02 Build</h3><p>Developing scalable automation & tech systems.</p></div>
-<div class="card"><h3>03 Deploy</h3><p>Launching optimized growth solutions.</p></div>
-<div class="card"><h3>04 Scale</h3><p>Continuous optimization and support.</p></div>
-</div>
-</section>
+    <section id="process" class="py-20 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-500 font-bold uppercase text-sm tracking-widest">Our Process</span>
+                <h2 class="text-4xl font-bold mt-2">How We Deliver</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-black text-slate-800 mb-4 text-center">01</div>
+                    <h4 class="font-bold text-xl mb-2">Strategy</h4>
+                    <p class="text-gray-500 text-sm">Analyzing your market and ICP.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-slate-800 mb-4">02</div>
+                    <h4 class="font-bold text-xl mb-2">Setup</h4>
+                    <p class="text-gray-500 text-sm">Building scripts and tools.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-slate-800 mb-4">03</div>
+                    <h4 class="font-bold text-xl mb-2">Execution</h4>
+                    <p class="text-gray-500 text-sm">Precision multi-channel outreach.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-slate-800 mb-4">04</div>
+                    <h4 class="font-bold text-xl mb-2">Optimization</h4>
+                    <p class="text-gray-500 text-sm">A/B testing for better ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="case">
-<h2>Case Studies</h2>
-<div class="grid">
-<div class="card"><h3>FinTech Growth</h3><p>Boosted sales by 300% through automation.</p></div>
-<div class="card"><h3>Ecommerce Scaling</h3><p>Reduced support cost by 40% with AI workflows.</p></div>
-</div>
-</section>
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass-card p-12 rounded-[40px] shadow-2xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Let's <span class="text-blue-500">Get Started</span></h2>
+            <p class="text-gray-400 text-center mb-10">Ready to scale your business? Book a free consultation today.</p>
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Your Name" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none">
+                    <input type="email" placeholder="Email Address" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none">
+                </div>
+                <input type="text" placeholder="Subject" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none">
+                <textarea rows="4" placeholder="Your Message" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none"></textarea>
+                <button class="w-full blue-gradient py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<section>
-<h2>Performance Metrics</h2>
-<div class="stats">
-<div class="stat"><h3>250+</h3><p>Clients</p></div>
-<div class="stat"><h3>98%</h3><p>Satisfaction</p></div>
-<div class="stat"><h3>24/7</h3><p>Support</p></div>
-</div>
-</section>
-
-<section>
-<h2>Client Testimonial</h2>
-<div class="testimonial">
-<p>"NextGen HQ Tech transformed our digital operations and dramatically increased our customer engagement."</p>
-</div>
-</section>
-
-<section id="faq">
-<h2>Frequently Asked Questions</h2>
-<div class="faq-item" onclick="toggleFAQ(this)">
-What services do you provide?
-<div class="faq-answer">We provide automation, lead generation, digital infrastructure and support services.</div>
-</div>
-<div class="faq-item" onclick="toggleFAQ(this)">
-Do you offer 24/7 support?
-<div class="faq-answer">Yes, we operate globally with 24/7 availability.</div>
-</div>
-</section>
-
-<section class="newsletter">
-<h2>Join Our Newsletter</h2>
-<p>Stay updated with tech insights and growth strategies.</p>
-</section>
-
-<section id="contact">
-<h2>Contact Us</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
-</form>
-</section>
-
-<footer>
-<div class="footer-grid">
-<div>
-<h4>Company</h4>
-<a href="#">About</a>
-<a href="#">Careers</a>
-<a href="#">Blog</a>
-</div>
-<div>
-<h4>Services</h4>
-<a href="#">Automation</a>
-<a href="#">Lead Generation</a>
-<a href="#">Web Development</a>
-</div>
-<div>
-<h4>Support</h4>
-<a href="#">Help Center</a>
-<a href="#">Privacy Policy</a>
-<a href="#">Terms</a>
-</div>
-</div>
-<div class="copy">
-© 2026 NextGen HQ Tech. All rights reserved.
-</div>
-</footer>
-
-<script>
-function toggleMenu(){
-document.getElementById("sidebar").classList.toggle("active");
-}
-function toggleFAQ(el){
-var ans=el.querySelector(".faq-answer");
-ans.style.display=ans.style.display==="block"?"none":"block";
-}
-</script>
+    <footer class="py-12 px-6 border-t border-slate-800/50 text-center">
+        <div class="mb-8 flex justify-center gap-6 text-gray-400 text-xl">
+            <i class="fa-brands fa-facebook hover:text-blue-500 cursor-pointer"></i>
+            <i class="fa-brands fa-linkedin hover:text-blue-500 cursor-pointer"></i>
+            <i class="fa-brands fa-instagram hover:text-blue-500 cursor-pointer"></i>
+        </div>
+        <p class="text-gray-400">Email: nextgenhqtech@gmail.com</p>
+        <p class="text-gray-600 text-xs mt-6">© 2026 NextGen HQ Tech. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
